@@ -1,0 +1,15 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite Run Ket Hop" verbose="1">
+    <test name="First Test">
+        <packages>
+<!--            <package name="com.anhtester.package_demo.package1"></package>-->
+<!--            <package name="com.anhtester.package_demo.package2"></package>-->
+
+<!--            Include/Exclude package-->
+            <package name="com.anhtester.package_demo.*">
+                <exclude name="com.anhtester.package_demo.package1"></exclude>
+            </package>
+        </packages>
+    </test>
+</suite>

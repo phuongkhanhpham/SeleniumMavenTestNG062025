@@ -29,18 +29,16 @@ public class DemoTestNG {
         Thread.sleep(2000);
     }
 
-    @Test
-    public void testGoogleSearch() throws InterruptedException {
-        driver.get("https://www.google.com/");
-        driver.findElement(By.xpath("//textarea[@name='q']")).sendKeys("anhtester", Keys.ENTER);
-//        driver.findElement(By.xpath("//textarea[@name='q']")).sendKeys("anhtester");
+    //Google page has already blocked
+//    @Test
+//    public void testGoogleSearch() throws InterruptedException {
+//        driver.get("https://www.google.com/");
+//        driver.findElement(By.xpath("//textarea[@name='q']")).sendKeys("anhtester", Keys.ENTER);
 //        Thread.sleep(2000);
-//        driver.findElement(By.xpath("//textarea[@name='q']")).sendKeys(Keys.ENTER);
-        Thread.sleep(2000);
-        driver.findElement(By.xpath("//h3[normalize-space()='Anh Tester Automation Testing']")).click();
-        Thread.sleep(2000);
-        Assert.assertTrue(driver.findElement(By.xpath("//h3[normalize-space()='Anh Tester Automation Testing']")).isDisplayed());
-    }
+//        driver.findElement(By.xpath("//h3[normalize-space()='Anh Tester Automation Testing']")).click();
+//        Thread.sleep(2000);
+//        Assert.assertTrue(driver.findElement(By.xpath("//h3[normalize-space()='Anh Tester Automation Testing']")).isDisplayed());
+//    }
 
     @AfterMethod
     public void closeDriver() {

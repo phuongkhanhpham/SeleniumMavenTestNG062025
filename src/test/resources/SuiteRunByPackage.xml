@@ -1,0 +1,17 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite run By Package" verbose="1">
+    <test name="Run Ket Hop">
+        <packages>
+            <package name="com.anhtester.package_demo.package1"></package>
+        </packages>
+        <classes>
+            <class name="com.anhtester.Bai9_TestNGFramework.DemoTestNG"></class>
+            <class name="com.anhtester.Bai9_TestNGFramework.DemoTestNG_02">
+                <methods>
+                    <include name="testLoginCRM"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
