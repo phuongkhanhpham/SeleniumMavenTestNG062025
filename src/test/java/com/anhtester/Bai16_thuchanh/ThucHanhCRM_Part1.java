@@ -1,8 +1,7 @@
-package com.anhtester.thuchanh;
+package com.anhtester.Bai16_thuchanh;
 
 import com.anhtester.common.LocatorCRM;
 import com.anhtester.common.BaseTest;
-import com.anhtester.common.LocatorCRM;
 import org.openqa.selenium.By;
 import org.testng.annotations.Test;
 
