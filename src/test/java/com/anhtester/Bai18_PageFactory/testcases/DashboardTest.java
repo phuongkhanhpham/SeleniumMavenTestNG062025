@@ -19,6 +19,6 @@ public class DashboardTest extends BaseTest {
 
         dashboardPage.getListMenu();
 
-//        dashboardPage.verifyInvoicesAwaitingPayment("0 / 2");
+        dashboardPage.verifyInvoicesAwaitingPayment("1 / 3");
     }
 }
