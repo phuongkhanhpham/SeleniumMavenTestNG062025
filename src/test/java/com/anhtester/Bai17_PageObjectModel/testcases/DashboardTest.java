@@ -15,6 +15,8 @@ public class DashboardTest extends BaseTest {
         loginPage = new LoginPage(driver);
         loginPage.loginCRM(); // Chỉ Login
 
+//        **************************************************************
+
         dashboardPage = new DashboardPage(driver);
         dashboardPage.verifyInvoicesAwaitingPayment("0 / 2");
     }
