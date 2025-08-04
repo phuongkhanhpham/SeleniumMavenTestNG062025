@@ -16,6 +16,7 @@ public class LocatorCRM {
     public static String menuCustomer = "//span[normalize-space()='Customers']";
     public static String iconProfile = "//li[contains(@class,'header-user-profile')]";
     public static String menuTasks = "//span[normalize-space()='Tasks']";
+    public static String menuProjects = "//span[normalize-space()='Projects']";
     public static String menuSales = "//span[@class='menu-text' and normalize-space()='Sales']";
     public static String menuProposals = "//span[normalize-space()='Proposals']";
 

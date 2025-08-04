@@ -1,6 +1,5 @@
 package com.anhtester.Bai19_PageNavigation.pages;
 
-import com.anhtester.Bai19_PageNavigation.pages.DashboardPage;
 import com.anhtester.keywords.WebUI;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

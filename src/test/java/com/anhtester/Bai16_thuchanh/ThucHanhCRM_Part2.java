@@ -109,6 +109,7 @@ public class ThucHanhCRM_Part2 extends BaseTest {
         //Tiếp theo check item customer hiển thị tại trang Customer list
 //        Thread.sleep(1000);
 
+        // Search and check first data
         WebUI.clickElement(By.xpath(LocatorCRM.menuCustomer));
 //        driver.findElement(By.xpath(LocatorCRM.menuCustomer)).click();
 
@@ -129,6 +130,7 @@ public class ThucHanhCRM_Part2 extends BaseTest {
 //        driver.findElement(By.xpath(LocatorCRM.itemCustomerFirst)).click();
 //        Thread.sleep(2000);
 
+        // Verify data in customer detail
         Assert.assertEquals(driver.findElement(By.xpath(LocatorCRM.inputCompany)).getAttribute("value"), CUSTOMER_NAME, "The company name is not matched.");
         Assert.assertEquals(driver.findElement(By.xpath(LocatorCRM.inputVat)).getAttribute("value"), "10", "The VAT value is not matched.");
         Assert.assertEquals(driver.findElement(By.xpath(LocatorCRM.inputPhoneNumber)).getAttribute("value"), "0123456789", "The phone number is not matched.");
