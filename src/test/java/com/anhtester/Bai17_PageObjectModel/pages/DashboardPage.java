@@ -18,6 +18,6 @@ public class DashboardPage {
 
     public void verifyInvoicesAwaitingPayment(String total) {
         Assert.assertTrue(driver.findElement(totalInvoicesAwaitingPayment).isDisplayed(), "The Invoices Awaiting Payment total label is not displayed.");
-        Assert.assertEquals(WebUI.getTextElement(totalInvoicesAwaitingPayment), "total", "The Invoices Awaiting Payment total is not matched.");
+        Assert.assertEquals(WebUI.getElementText(totalInvoicesAwaitingPayment), "total", "The Invoices Awaiting Payment total is not matched.");
     }
 }

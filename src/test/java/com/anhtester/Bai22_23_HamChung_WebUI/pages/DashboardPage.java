@@ -1,4 +1,4 @@
-package com.anhtester.Bai20_21_Practise_POM_CRM.pages;
+package com.anhtester.Bai22_23_HamChung_WebUI.pages;
 
 import com.anhtester.keywords.WebUI;
 import org.openqa.selenium.By;
@@ -12,13 +12,14 @@ public class DashboardPage extends BasePage {
     public DashboardPage(WebDriver driver) {
         super(driver);
         this.driver = driver;
+//        new WebUI(driver); // Do extend BasePage đã khởi tạo WebUI nên không cần
     }
 
     private By totalInvoicesAwaitingPayment = By.xpath("//span[normalize-space()='Invoices Awaiting Payment']/parent::div/following-sibling::span");
     private By totalConvertedLeads = By.xpath("//span[normalize-space()='Invoices Awaiting Payment']/parent::div/following-sibling::span");
 
     public void verifyInvoicesAwaitingPayment(String total) {
-        Assert.assertTrue(driver.findElement(totalInvoicesAwaitingPayment).isDisplayed(), "The Invoices Awaiting Payment total label is not displayed.");
+        Assert.assertTrue(WebUI.isElementDisplayed(totalInvoicesAwaitingPayment), "The Invoices Awaiting Payment total label is not displayed.");
         Assert.assertEquals(WebUI.getElementText(totalInvoicesAwaitingPayment), total, "The Invoices Awaiting Payment total is not matched.");
     }
 }

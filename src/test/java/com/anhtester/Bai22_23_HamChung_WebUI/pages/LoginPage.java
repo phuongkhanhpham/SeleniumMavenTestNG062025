@@ -1,4 +1,4 @@
-package com.anhtester.Bai19_PageNavigation.pages;
+package com.anhtester.Bai22_23_HamChung_WebUI.pages;
 
 import com.anhtester.keywords.WebUI;
 import org.openqa.selenium.By;
@@ -61,8 +61,8 @@ public class LoginPage {
 
     public void verifyLoginFailWithNullFields() {
         Assert.assertTrue(driver.getCurrentUrl().contains("authentication"), "FAIL. Không còn ở trang Login");
-        Assert.assertTrue(driver.findElement(errorMessage1).isDisplayed(), "Error message 1 NOT displays");
-        Assert.assertTrue(driver.findElement(errorMessage2).isDisplayed(), "Error message 2 NOT displays");
+        Assert.assertTrue(WebUI.isElementDisplayed(errorMessage1), "Error message 1 NOT displays");
+        Assert.assertTrue(WebUI.isElementDisplayed(errorMessage2), "Error message 2 NOT displays");
 
 //        String actualMessage1 = driver.findElement(errorMessage1).getText();
 //        String actualMessage2 = driver.findElement(errorMessage2).getText();
@@ -123,17 +123,23 @@ public class LoginPage {
     // Hàm này chỉ phục vụ cho việc test nội bộ trang Login, nên không cần liên kết trang
     public void loginCRM(String email, String password) {
         WebUI.openURL("https://crm.anhtester.com/admin/authentication");
+        WebUI.waitForPageLoaded();
         WebUI.setText(inputEmail, email);
         WebUI.setText(inputPassword, password);
         WebUI.clickElement(buttonLogin);
+        WebUI.waitForPageLoaded();
     }
 
     // Hàm này phục vụ cho việc Login để đi test những trang bên trong app, nên phải liên kết trang
     public DashboardPage loginCRM() throws InterruptedException {
         WebUI.openURL("https://crm.anhtester.com/admin/authentication");
+        WebUI.waitForPageLoaded();
+        WebUI.clearText(inputEmail);
+        WebUI.clearText(inputPassword);
         WebUI.setText(inputEmail, "admin@example.com");
         WebUI.setText(inputPassword, "123456");
         WebUI.clickElement(buttonLogin);
+        WebUI.waitForPageLoaded();
         Thread.sleep(1000);
         verifyLoginSuccess();
 

@@ -34,7 +34,7 @@ public class ThucHanhCRM_Part2 extends BaseTest {
         WebUI.clickElement(By.xpath(LocatorCRM.menuCustomer));
 //        driver.findElement(By.xpath(LocatorCRM.menuCustomer)).click();
 
-        System.out.println(WebUI.getTextElement(By.xpath(LocatorCRM.headerCustomersPage)));
+        System.out.println(WebUI.getElementText(By.xpath(LocatorCRM.headerCustomersPage)));
 //        System.out.println(driver.findElement(By.xpath(LocatorCRM.headerCustomersPage)).getText());
 
         WebUI.clickElement(By.xpath(LocatorCRM.buttonAddNewCustomer));
@@ -120,9 +120,9 @@ public class ThucHanhCRM_Part2 extends BaseTest {
         WebUI.waitForElementVisible(By.xpath(LocatorCRM.itemCustomerFirst));
 //        System.out.println(driver.findElement(By.xpath(LocatorCRM.itemCustomerFirst)).isDisplayed());
 
-        Assert.assertEquals(WebUI.getTextElement(By.xpath(LocatorCRM.itemCustomerFirst)), CUSTOMER_NAME, "The customer name is not matched.");
+        Assert.assertEquals(WebUI.getElementText(By.xpath(LocatorCRM.itemCustomerFirst)), CUSTOMER_NAME, "The customer name is not matched.");
 
-//        System.out.println(WebUI.getTextElement(By.xpath(LocatorCRM.itemCustomerFirst)));
+//        System.out.println(WebUI.getElementText(By.xpath(LocatorCRM.itemCustomerFirst)));
 //        System.out.println("Customer in List: " + driver.findElement(By.xpath(LocatorCRM.itemCustomerFirst)).getText());
         //Tiếp theo check Customer đúng hết data sau khi add
 

@@ -1,4 +1,4 @@
-package com.anhtester.Bai20_21_Practise_POM_CRM.pages;
+package com.anhtester.Bai22_23_HamChung_WebUI.pages;
 
 import com.anhtester.keywords.WebUI;
 import org.openqa.selenium.By;
@@ -48,24 +48,13 @@ public class CustomerPage extends BasePage {
 
     private By headerCustomerDetailPage = By.xpath("//h4[normalize-space()='Profile']");
 
-    private boolean checkElementExist(By by) {
-        try {
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(5));
-            wait.until(ExpectedConditions.visibilityOfElementLocated(by));
-//            driver.findElement(by).isDisplayed();
-            return true;
-        } catch (NoSuchElementException e) {
-            return false;
-        }
-    }
-
     public void verifyNavigateToCustomerPage() {
-        Assert.assertTrue(checkElementExist(headerCustomersPage), "The customer header page is not displayed.");
+        Assert.assertTrue(WebUI.checkElementExist(headerCustomersPage), "The customer header page is not displayed.");
         Assert.assertEquals(WebUI.getElementText(headerCustomersPage), "Customers Summary", "The customer header page is not matched.");
     }
 
     public void verifyNavigateToCustomerDetailPage() {
-        Assert.assertTrue(checkElementExist(headerCustomerDetailPage), "The customer detail header page is not displayed.");
+        Assert.assertTrue(WebUI.checkElementExist(headerCustomerDetailPage), "The customer detail header page is not displayed.");
         Assert.assertEquals(WebUI.getElementText(headerCustomerDetailPage), "Profile", "The customer detail header page is not matched.");
     }
 
@@ -123,7 +112,7 @@ public class CustomerPage extends BasePage {
     }
 
     public int getCustomerTotal() {
-        String totalString = driver.findElement(totalCustomers).getText();
+        String totalString = WebUI.getElementText(totalCustomers);
         System.out.println("getCustomerTotal: " + totalString);
         return Integer.parseInt(totalString);
     }
