@@ -19,7 +19,7 @@ public class CustomerTest extends BaseTest {
         dashboardPage = loginPage.loginCRM();
         customerPage = dashboardPage.clickMenuCustomers();
 
-        String customerName = "Anh Tester 250805002";
+        String customerName = "Anh Tester 250820002";
 
         customerPage.verifyNavigateToCustomerPage();
         int beforeTotal = customerPage.getCustomerTotal();

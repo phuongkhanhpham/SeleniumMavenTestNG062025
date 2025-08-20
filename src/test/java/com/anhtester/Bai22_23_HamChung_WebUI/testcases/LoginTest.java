@@ -9,11 +9,10 @@ public class LoginTest extends BaseTest {
     LoginPage loginPage;
 
     @Test(priority = 1)
-    public void loginSuccess() throws InterruptedException {
+    public void loginSuccess() {
         loginPage = new LoginPage(driver);
         loginPage.loginCRM("admin@example.com", "123456");
         loginPage.verifyLoginSuccess();
-        Thread.sleep(1000);
     }
 
     @Test(priority = 2)

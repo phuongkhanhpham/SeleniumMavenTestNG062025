@@ -50,12 +50,12 @@ public class CustomerPage extends BasePage {
 
     public void verifyNavigateToCustomerPage() {
         Assert.assertTrue(WebUI.checkElementExist(headerCustomersPage), "The customer header page is not displayed.");
-        Assert.assertEquals(WebUI.getElementText(headerCustomersPage), "Customers Summary", "The customer header page is not matched.");
+        WebUI.assertEquals(WebUI.getElementText(headerCustomersPage), "Customers Summary", "The customer header page is not matched.");
     }
 
     public void verifyNavigateToCustomerDetailPage() {
         Assert.assertTrue(WebUI.checkElementExist(headerCustomerDetailPage), "The customer detail header page is not displayed.");
-        Assert.assertEquals(WebUI.getElementText(headerCustomerDetailPage), "Profile", "The customer detail header page is not matched.");
+        WebUI.assertEquals(WebUI.getElementText(headerCustomerDetailPage), "Profile", "The customer detail header page is not matched.");
     }
 
     public void clickButtonAddNewCusTomer() {
@@ -90,12 +90,12 @@ public class CustomerPage extends BasePage {
         // Verify alert message
 
         // Verify data in customer detail
-        Assert.assertEquals(driver.findElement(inputCompany).getAttribute("value"), customerName, "The company name is not matched.");
-        Assert.assertEquals(driver.findElement(inputVat).getAttribute("value"), "10", "The VAT value is not matched.");
-        Assert.assertEquals(driver.findElement(inputPhoneNumber).getAttribute("value"), "0123456789", "The phone number is not matched.");
-        Assert.assertEquals(driver.findElement(inputWebsite).getAttribute("value"), "https://anhtester.com/", "The website is not matched.");
-        Assert.assertEquals(driver.findElement(dropdownGroups).getText(), "VIP", "The group value is not matched.");
-        Assert.assertEquals(driver.findElement(dropdownLanguage).getText(), "Vietnamese", "The language value is not matched.");
+        WebUI.assertEquals(driver.findElement(inputCompany).getAttribute("value"), customerName, "The company name is not matched.");
+        WebUI.assertEquals(driver.findElement(inputVat).getAttribute("value"), "10", "The VAT value is not matched.");
+        WebUI.assertEquals(driver.findElement(inputPhoneNumber).getAttribute("value"), "0123456789", "The phone number is not matched.");
+        WebUI.assertEquals(driver.findElement(inputWebsite).getAttribute("value"), "https://anhtester.com/", "The website is not matched.");
+        WebUI.assertEquals(driver.findElement(dropdownGroups).getText(), "VIP", "The group value is not matched.");
+        WebUI.assertEquals(driver.findElement(dropdownLanguage).getText(), "Vietnamese", "The language value is not matched.");
     }
 
     public void searchAndCheckCustomerInTable(String customerName) {
@@ -104,7 +104,7 @@ public class CustomerPage extends BasePage {
         WebUI.sleep(2);
         String customerNameInTable = WebUI.getElementText(itemCustomerFirst);
         System.out.println(customerNameInTable);
-        Assert.assertEquals(customerNameInTable, customerName, "The customer name in table is not matched.");
+        WebUI.assertEquals(customerNameInTable, customerName, "The customer name in table is not matched.");
     }
 
     public void clickFirstCustomer() {
