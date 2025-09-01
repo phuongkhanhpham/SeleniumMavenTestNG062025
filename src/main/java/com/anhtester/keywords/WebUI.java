@@ -187,21 +187,21 @@ public class WebUI {
     public static void openURL(String url) {
         driver.get(url);
         sleep(STEP_TIME);
-        logConsole("\uD83C\uDF0E Open URL:  " + url);
+        logConsole("\uD83C\uDF10 Open URL:  " + url);
     }
 
     public static void clickElement(By by) {
         waitForElementClickable(by);
         sleep(STEP_TIME);
         getWebElement(by).click();
-        logConsole("Click on element " + by);
+        logConsole("\uD83D\uDC49 Click on element " + by);
     }
 
     public static void clickElement(By by, int timeout) {
         waitForElementClickable(by, timeout);
         sleep(STEP_TIME);
         getWebElement(by).click();
-        logConsole("Click on element " + by);
+        logConsole("\uD83D\uDC49 Click on element " + by);
     }
 
     public static void clearText(By by) {

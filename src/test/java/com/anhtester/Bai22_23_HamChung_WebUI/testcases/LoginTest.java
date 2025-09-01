@@ -2,6 +2,7 @@ package com.anhtester.Bai22_23_HamChung_WebUI.testcases;
 
 import com.anhtester.Bai22_23_HamChung_WebUI.pages.LoginPage;
 import com.anhtester.common.BaseTest;
+import com.anhtester.keywords.WebUI;
 import org.testng.annotations.Test;
 
 public class LoginTest extends BaseTest {
@@ -12,6 +13,7 @@ public class LoginTest extends BaseTest {
     public void loginSuccess() {
         loginPage = new LoginPage(driver);
         loginPage.loginCRM("admin@example.com", "123456");
+        WebUI.sleep(1);
         loginPage.verifyLoginSuccess();
     }
 
